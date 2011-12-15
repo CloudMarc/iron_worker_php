@@ -2,15 +2,12 @@
 
 function getArgs(){
     global $argv;
-    $args = array('payload' => array(), 'task_id' => null, 'dir' => null);
+    $args = array('task_id' => null, 'dir' => null, 'payload' => array());
     foreach($argv as $k => $v){
-        if ($v == '-id' && !empty($argv[$k+1])){
-            $args['task_id'] = $argv[$k+1];
-        }
-        if ($v == '-d' && !empty($argv[$k+1])){
-            $args['dir'] = $argv[$k+1];
-        }
-        if ($v == '-payload' && !empty($argv[$k+1]) && file_exists($argv[$k+1])){
+        if (empty($argv[$k+1])) continue;
+        if ($v == '-id') $args['task_id'] = $argv[$k+1];
+        if ($v == '-d')  $args['dir']     = $argv[$k+1];
+        if ($v == '-payload' && file_exists($argv[$k+1])){
             $args['payload'] = json_decode(file_get_contents($argv[$k+1]));
         }
     }
