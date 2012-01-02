@@ -18,7 +18,7 @@ echo "task_id = $task_id \n";
 
 sleep(10);
 
-$details = $sw->getTaskDetails($project_id, $task_id);
+$details = $sw->getTaskDetails('', $task_id);
 print_r($details);
 
 

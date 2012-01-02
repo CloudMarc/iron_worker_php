@@ -4,7 +4,6 @@ include("SimpleWorker.class.php");
 $name = "testBasic.php-helloPHP-".microtime(true);
 
 $sw = new SimpleWorker('config_sw.ini');
-#$sw = new SimpleWorker('config_production.ini');
 $sw->debug_enabled = true;
 
 $project_id = ""; # using default project_id from config
