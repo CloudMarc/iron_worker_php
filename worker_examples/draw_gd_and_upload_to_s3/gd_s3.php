@@ -27,7 +27,7 @@ $im = imagecreatefromstring($raw_image_content);
 
 // Any processing you want - resizing, adding watermark etc.
 $text_color = imagecolorallocate($im, 10, 10, 10);
-$font = dirname(__FILE__)."/Ubuntu-R.ttf";
+$font = dirname(__FILE__)."/font/Ubuntu-R.ttf";
 imagettftext($im, 36, 0, 10, 49, $text_color, $font, $payload->text);
 
 // Output jpeg (or any other chosen) & set quality.
